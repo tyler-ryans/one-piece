@@ -1,0 +1,25 @@
+.tableHead{
+    font-size: larger; 
+    border-bottom: 2px dotted blue;
+    border-top: 2px dotted blue;
+    border-left: 2px dotted blue;
+    border-right: 2px dotted blue;
+}
+table{
+    border-collapse: collapse;
+    margin-left: 50px;
+    transition: all 10s ease;
+}
+table:hover{
+    box-shadow: 2px 2px 4px blue;
+    transform: scale(1.2);
+}
+img{
+    height: 400px; 
+    width: 400px;
+    transition: all 5s linear;
+    margin-left: 400px;
+}
+img:hover{
+    transform: scale(1.9);
+}
