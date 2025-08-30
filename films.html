@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jurassic Films</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #111936;
+      --text: #e8eefc;
+      --muted: #a9b4d0;
+      --accent: #7cc6ff;
+      --chip: #1a244a;
+      --ring: #3a4e9b;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    img { border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.6); margin-bottom: 20px; }
+    h1 { text-align: center; font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px; }
+
+    dl {
+      background: var(--panel);
+      border-radius: 16px;
+      border: 1px solid #22306c;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      border-top: 1px solid #1b2758;
+    }
+    .row:first-child { border-top: none; }
+    dt, dd { margin: 0; padding: 16px; }
+    dt {
+      background: #101a38;
+      border-right: 1px solid #1b2758;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    dd { color: var(--muted); }
+    @media (max-width: 720px) {
+      .row { grid-template-columns: 1fr; }
+      dt { border-right: none; border-bottom: 1px solid #1b2758; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./fa6444378bea62ae8c7cac80d8fe649e.jpg" alt="Jurassic Franchise" height="400" width="100%">
+    <h1>Jurassic Park & Jurassic World Films</h1>
+    <dl>
+      <div class="row"><dt>Jurassic Park (1993)</dt><dd>Jurassic Park is a 1993 American science fiction-adventure film directed by Steven Spielberg and based on Michael Crichton's 1990 novel. The story centers on John Hammond, a wealthy industrialist who creates a theme park on a fictional island off Costa Rica, where cloned dinosaurs are brought back to life through genetic engineering. When sabotage causes a complete power failure, the park's dinosaurs escape, and a group of visitors, including paleontologists Alan Grant and Ellie Sattler, and mathematician Ian Malcolm, must fight to survive and escape.</dd></div>
+
+      <div class="row"><dt>The Lost World: Jurassic Park (1997)</dt><dd>The Lost World: Jurassic Park is a 1997 American science fiction-adventure film and the second installment in the Jurassic Park franchise, directed by Steven Spielberg and loosely based on Michael Crichton's 1995 novel. The film follows Dr. Ian Malcolm as he leads a team to Isla Sorna to document dinosaurs in their natural habitat, only to find they must also confront another team sent to capture the creatures for a zoo in San Diego.</dd></div>
+
+      <div class="row"><dt>Jurassic Park III (2001)</dt><dd>Jurassic Park III is the third film in the original trilogy, released in 2001 and directed by Joe Johnston. It follows paleontologist Dr. Alan Grant as he is tricked into visiting the dinosaur-filled Isla Sorna for a rescue mission to find a missing boy, introducing the new dominant dinosaur, the Spinosaurus, and featuring Pteranodons. While the film provides thrilling dinosaur action and brings Sam Neill back as Grant, it received mixed reviews for its weak plot and underdeveloped characters.</dd></div>
+
+      <div class="row"><dt>Jurassic World (2015)</dt><dd>Jurassic World is a 2015 science fiction action film set 22 years after the original Jurassic Park disaster, featuring a fully operational dinosaur theme park on the same island. When the park's owner encourages the creation of a new, genetically engineered hybrid dinosaur called the Indominus Rex, its escape from containment leads to widespread chaos, forcing the park's operations manager, Claire Dearing, and animal behaviorist Owen Grady to rescue a pair of visiting brothers and save the tourists.</dd></div>
+
+      <div class="row"><dt>Jurassic World: Fallen Kingdom (2018)</dt><dd>Jurassic World: Fallen Kingdom is the second film in the Jurassic World trilogy and the fifth film in the overall Jurassic Park franchise. The story centers on Owen Grady and Claire Dearing as they return to the island of Isla Nublar to rescue dinosaurs from a volcanic eruption, only to uncover a conspiracy involving illegal dinosaur auctions and a new genetically engineered hybrid. Directed by J.A. Bayona, it also features the return of Jeff Goldblum as Dr. Ian Malcolm.</dd></div>
+
+      <div class="row"><dt>Jurassic World: Dominion (2022)</dt><dd>Jurassic World Dominion is the sixth installment of the Jurassic Park franchise, released in 2022. Directed by Colin Trevorrow, the film features the return of both the Jurassic World cast and the original Jurassic Park stars Laura Dern, Jeff Goldblum, and Sam Neill. The story explores the challenges of humans and dinosaurs coexisting after the destruction of Isla Nublar, with dinosaurs now living alongside humans globally.</dd></div>
+    </dl>
+  </div>
+</body>
+</html>

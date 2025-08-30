@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jurassic Saga — Dinosaurs & Characters</title>
+  <style>
+    :root{
+      --bg:#071029; --panel:#0f1530; --muted:#a9b4d0; --text:#e8eefc; --accent:#7cc6ff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif;background:radial-gradient(900px 600px at 80% -20%,#0e2a57 0,var(--bg) 40%),var(--bg);color:var(--text);}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+    header{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+    h1{margin:0;font-size:clamp(26px,4vw,40px)}
+    p.lead{margin:0;color:var(--muted)}
+    .tools{display:flex;gap:12px;align-items:center}
+    .search{position:relative;flex:1}
+    .search input{width:100%;padding:12px 14px 12px 44px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:var(--panel);color:var(--text);outline:none}
+    .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.7}
+
+    details{background:linear-gradient(180deg,#0c1530,#0b1230);border:1px solid rgba(255,255,255,0.04);border-radius:12px;margin-bottom:12px;padding:8px 12px}
+    summary{list-style:none;cursor:pointer;padding:10px 6px;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:10px}
+    summary::-webkit-details-marker{display:none}
+    .movie-meta{color:var(--muted);font-weight:500;font-size:0.95rem}
+
+    dl{margin:8px 0 0;border-radius:8px;overflow:hidden}
+    .row{display:grid;grid-template-columns:260px 1fr;gap:0;border-top:1px solid rgba(255,255,255,0.02);align-items:center;padding:0}
+    .row:first-child{border-top:none}
+    dt{padding:12px 14px;background:#0b1736;color:var(--accent);font-weight:700}
+    dd{margin:0;padding:12px 14px;color:var(--muted);line-height:1.5}
+    .chip{display:inline-block;padding:3px 8px;border-radius:999px;background:#122244;color:#cfe8ff;font-size:12px;margin-left:8px}
+
+    footer{margin-top:18px;color:var(--muted);font-size:14px}
+    @media(max-width:760px){.row{grid-template-columns:1fr}dt{border-bottom:1px solid rgba(255,255,255,0.02)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Jurassic Park & Jurassic World — Characters (Dinosaurs & People)</h1>
+      <p class="lead">Collapsible, combined lists per movie. Search filters both dinosaur and human character names/descriptions.</p>
+      <div class="tools">
+        <div class="search" role="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input id="filter" type="search" placeholder="Filter by name, movie, or trait (e.g., raptor, Hammond)…" aria-label="Filter characters">
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Jurassic Park (1993) -->
+      <details open>
+        <summary>
+          Jurassic Park (1993)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Tyrannosaurus rex <span class="chip">dinosaur</span></dt><dd>Breakout star and unexpected savior; iconic paddock & finale appearances.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Velociraptor <span class="chip">dinosaur</span></dt><dd>Pack of highly intelligent predators stalking survivors through the park.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dilophosaurus <span class="chip">dinosaur</span></dt><dd>Frilled, venom-spitting ambusher; infamous for the Nedry encounter.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Brachiosaurus <span class="chip">dinosaur</span></dt><dd>Majestic sauropod; first dinosaur revealed on-screen.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Triceratops <span class="chip">dinosaur</span></dt><dd>“Sick Trike” scene; hands-on paleontology and practical effects showcase.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Gallimimus <span class="chip">dinosaur</span></dt><dd>Fast-running herd; stampeded across the plains into T. rex hunting zone.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Parasaurolophus <span class="chip">dinosaur</span></dt><dd>Hadrosaur cameo in river and field shots.</dd></div>
+
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>John Hammond <span class="chip">human</span></dt><dd>Wealthy industrialist and founder of Jurassic Park (portrayed by Richard Attenborough).</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dr. Alan Grant <span class="chip">human</span></dt><dd>Paleontologist and protagonist who studies dinosaur behavior (Sam Neill).</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dr. Ellie Sattler <span class="chip">human</span></dt><dd>Paleobotanist and field scientist who assists in studying park dinosaurs (Laura Dern).</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dr. Ian Malcolm <span class="chip">human</span></dt><dd>Mathematician and chaos theorist who warns about the park’s hubris (Jeff Goldblum).</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Lex Murphy <span class="chip">human</span></dt><dd>John Hammond's granddaughter; resourceful child who helps reboot systems.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Tim Murphy <span class="chip">human</span></dt><dd>John Hammond's grandson; fascinated by dinosaurs and video games.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dennis Nedry <span class="chip">human</span></dt><dd>InGen computer programmer who sabotages park systems (ill-fated due to Dilophosaurus).</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Robert Muldoon <span class="chip">human</span></dt><dd>Game warden and raptor handler who understands predator behavior.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Donald Gennaro <span class="chip">human</span></dt><dd>Lawyer and corporate representative overseeing the park’s safety evaluation.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Ray Arnold <span class="chip">human</span></dt><dd>Park chief engineer responsible for control systems.</dd></div>
+          <div class="row" data-movie="Jurassic Park (1993)"><dt>Dr. Henry Wu <span class="chip">human</span></dt><dd>Geneticist who appears as the park's lead scientist (small role in the original film).</dd></div>
+        </dl>
+      </details>
+
+      <!-- The Lost World (1997) -->
+      <details>
+        <summary>
+          The Lost World: Jurassic Park (1997)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Tyrannosaurus rex <span class="chip">dinosaur</span></dt><dd>Family unit (Buck, Doe, infant); rescue and San Diego rampage set pieces.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Velociraptor <span class="chip">dinosaur</span></dt><dd>Territorial pack in the long grass and village; coordinated, agile hunters.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Compsognathus <span class="chip">dinosaur</span></dt><dd>Tiny “Compies” that swarm; surprising danger in numbers on the beach & stream.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Stegosaurus <span class="chip">dinosaur</span></dt><dd>First franchise appearance; defensive tail swings during photo encounter.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Pachycephalosaurus <span class="chip">dinosaur</span></dt><dd>Head-butting “Pachy”; crowd-pleaser during the round‑up sequence.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Parasaurolophus <span class="chip">dinosaur</span></dt><dd>Captured by InGen team; prominent in the herd round‑up.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Gallimimus <span class="chip">dinosaur</span></dt><dd>Further herd behavior glimpses on Isla Sorna.</dd></div>
+
+          <div class="row" data-movie="The Lost World (1997)"><dt>Dr. Ian Malcolm <span class="chip">human</span></dt><dd>Returns as the protagonist leading a documentary team to Isla Sorna.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Sarah Harding <span class="chip">human</span></dt><dd>Paleontologist and animal behaviorist who studies dinosaurs in the wild.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Roland Tembo <span class="chip">human</span></dt><dd>Big-game hunter hired to capture dinosaurs.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Nick Van Owen <span class="chip">human</span></dt><dd>Documentary filmmaker and activist with field experience on Isla Sorna.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Eddie Carr <span class="chip">human</span></dt><dd>Field equipment specialist and rescue team member.</dd></div>
+          <div class="row" data-movie="The Lost World (1997)"><dt>Peter Ludlow <span class="chip">human</span></dt><dd>InGen executive involved with relocating dinosaurs to the mainland.</dd></div>
+        </dl>
+      </details>
+
+      <!-- Jurassic Park III (2001) -->
+      <details>
+        <summary>
+          Jurassic Park III (2001)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Spinosaurus aegyptiacus <span class="chip">dinosaur</span></dt><dd>Main antagonist; river pursuit and plane crash; famously kills a juvenile T. rex.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Velociraptor <span class="chip">dinosaur</span></dt><dd>Male and female packs; advanced communication and nest‑protection behavior.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Pteranodon <span class="chip">dinosaur</span></dt><dd>Aviary escape sequence; aerial predation and nest defense.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Ankylosaurus <span class="chip">dinosaur</span></dt><dd>Heavily armored herbivore; club tail cameo on Sorna.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Corythosaurus <span class="chip">dinosaur</span></dt><dd>Hadrosaur with prominent crest; herd cameo alongside other herbivores.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Ceratosaurus <span class="chip">dinosaur</span></dt><dd>Brief encounter near Spinosaurus scat; retreats on sensing Spino.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Brachiosaurus <span class="chip">dinosaur</span></dt><dd>Return appearance; peaceful browsing establishes Sorna’s ecology.</dd></div>
+
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Dr. Alan Grant <span class="chip">human</span></dt><dd>Returned protagonist; dragged into Isla Sorna rescue mission.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Paul Kirby <span class="chip">human</span></dt><dd>Charismatic businessman who hires Grant to find his missing son.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Amanda Kirby <span class="chip">human</span></dt><dd>Paul’s wife; part of the rescue team.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Eric Kirby <span class="chip">human</span></dt><dd>The missing boy whose disappearance triggers the rescue mission.</dd></div>
+          <div class="row" data-movie="Jurassic Park III (2001)"><dt>Billy Brennan <span class="chip">human</span></dt><dd>Pilot and longtime associate who helps transport the group around Sorna.</dd></div>
+        </dl>
+      </details>
+
+      <!-- Jurassic World (2015) -->
+      <details>
+        <summary>
+          Jurassic World (2015)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Indominus rex <span class="chip">dinosaur / hybrid</span></dt><dd>Engineered apex predator with camouflage and high cognition; park catastrophe catalyst.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Velociraptor (Blue, Delta, Echo, Charlie) <span class="chip">dinosaur</span></dt><dd>Owen’s trained pack; shifting loyalties and tactical hunting.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Tyrannosaurus rex <span class="chip">dinosaur</span></dt><dd>Returns as bruised veteran; climactic team‑up against Indominus.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Mosasaurus <span class="chip">dinosaur</span></dt><dd>Marine reptile; stadium feedings and decisive takedown of Indominus.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Apatosaurus <span class="chip">dinosaur</span></dt><dd>Gentle giants; emotional aftermath of Indominus rampage.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Ankylosaurus <span class="chip">dinosaur</span></dt><dd>Armor and club tail on display; falls prey to Indominus in the forest.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Pteranodon <span class="chip">dinosaur</span></dt><dd>Aviary breach; part of mass aerial attack on Main Street.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Dimorphodon <span class="chip">dinosaur</span></dt><dd>Small pterosaur with dual dentition; swarms during breakout.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Stegosaurus <span class="chip">dinosaur</span></dt><dd>Cameo establishing wider herbivore exhibits.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Parasaurolophus <span class="chip">dinosaur</span></dt><dd>Background herds in gyrosphere valley.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Gallimimus <span class="chip">dinosaur</span></dt><dd>Herding behavior returns in park sequences.</dd></div>
+
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Claire Dearing <span class="chip">human</span></dt><dd>Park operations manager struggling with the park's commercial direction (Bryce Dallas Howard).</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Owen Grady <span class="chip">human</span></dt><dd>Animal behaviourist who trains raptors (Chris Pratt).</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Simon Masrani <span class="chip">human</span></dt><dd>Owner of the Masrani Corporation that runs Jurassic World (owner and public face).</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Vic Hoskins <span class="chip">human</span></dt><dd>Head of security interested in weaponizing raptor intelligence.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Dr. Henry Wu <span class="chip">human</span></dt><dd>Lead geneticist responsible for the park’s new creations.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Zach Mitchell <span class="chip">human</span></dt><dd>One of the visiting nephews who gets caught up in the park disaster.</dd></div>
+          <div class="row" data-movie="Jurassic World (2015)"><dt>Gray Mitchell <span class="chip">human</span></dt><dd>Zach’s younger brother; also present during the breakout.</dd></div>
+        </dl>
+      </details>
+
+      <!-- Fallen Kingdom (2018) -->
+      <details>
+        <summary>
+          Jurassic World: Fallen Kingdom (2018)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Indoraptor <span class="chip">dinosaur / hybrid</span></dt><dd>Weaponized prototype; night‑stalker with heightened senses and cruelty.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Velociraptor (Blue) <span class="chip">dinosaur</span></dt><dd>Central to rescue and bond with Owen; pivotal in Indoraptor’s defeat.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Tyrannosaurus rex <span class="chip">dinosaur</span></dt><dd>Recurring rescues and assertive apex behavior during transport sequences.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Baryonyx <span class="chip">dinosaur</span></dt><dd>Semi‑aquatic theropod; claustrophobic bunker encounter amid lava.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Stygimoloch <span class="chip">dinosaur</span></dt><dd>Bone‑headed disruptor (“Stiggy”); creates chaos at the auction.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Carnotaurus <span class="chip">dinosaur</span></dt><dd>Horned predator in the Nublar stampede; clipped by T. rex intervention.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Allosaurus <span class="chip">dinosaur</span></dt><dd>Featured at the auction; later appears in released‑into‑world montage.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Mosasaurus <span class="chip">dinosaur</span></dt><dd>Opens with sub attack; later hunts in open ocean.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Sinoceratops <span class="chip">dinosaur</span></dt><dd>Ceratopsian ally during island trek; distinctive nasal horn and frill.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Apatosaurus <span class="chip">dinosaur</span></dt><dd>Tragic silhouette in ash and smoke as Nublar erupts.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Pteranodon & Dimorphodon <span class="chip">dinosaur</span></dt><dd>Escape the island, foreshadowing global spread.</dd></div>
+
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Claire Dearing <span class="chip">human</span></dt><dd>Returns to help rescue dinosaurs; driving moral center of the rescue effort.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Owen Grady <span class="chip">human</span></dt><dd>Returns with his bond to Blue and attempts to save the dinosaurs.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Dr. Henry Wu <span class="chip">human</span></dt><dd>Geneticist whose work continues to impact events off-island.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Maisie Lockwood <span class="chip">human</span></dt><dd>Granddaughter of Benjamin Lockwood; her existence ties into genetic ethics subplot.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Eli Mills <span class="chip">human</span></dt><dd>Corporate figure orchestrating the auction and dinosaur trafficking plot.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Benjamin Lockwood <span class="chip">human</span></dt><dd>Former partner of John Hammond, connected to dinosaur conservation efforts.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Franklin Webb <span class="chip">human</span></dt><dd>Technician who helps Claire and Owen during the rescue and later in the U.S.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Zia Rodriguez <span class="chip">human</span></dt><dd>Animal rights-trained field specialist assisting the rescue team.</dd></div>
+          <div class="row" data-movie="Fallen Kingdom (2018)"><dt>Ian Malcolm <span class="chip">human</span></dt><dd>Returns and becomes part of the moral debate surrounding the dinosaurs' fate.</dd></div>
+        </dl>
+      </details>
+
+      <!-- Dominion (2022) -->
+      <details>
+        <summary>
+          Jurassic World: Dominion (2022)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Dominion (2022)"><dt>Giganotosaurus <span class="chip">dinosaur</span></dt><dd>Introduced as the largest land predator; showpiece duel with Rexy and Therizinosaurus.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Therizinosaurus <span class="chip">dinosaur</span></dt><dd>Feathered, long‑clawed herbivore; terrifying presence and key ally in finale.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Tyrannosaurus rex <span class="chip">dinosaur</span></dt><dd>Legacy apex; completes circle with triumph at Biosyn sanctuary.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Velociraptor (Blue & Beta) <span class="chip">dinosaur</span></dt><dd>Mother‑offspring duo; protective instincts drive rescue subplot.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Atrociraptor <span class="chip">dinosaur</span></dt><dd>Bulky, aggressive raptors used for pursuits in Malta.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Pyroraptor <span class="chip">dinosaur</span></dt><dd>Feathered raptor adapted to cold; acrobatic ice‑lake confrontation.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Dimetrodon <span class="chip">dinosaur</span></dt><dd>Synapsid “sail‑back” in amber caves; ambush predator vibe.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Quetzalcoatlus <span class="chip">dinosaur</span></dt><dd>Giant pterosaur that cripples a transport plane mid‑flight.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Dreadnoughtus <span class="chip">dinosaur</span></dt><dd>Enormous titanosaur cameo at the sanctuary.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Oviraptor <span class="chip">dinosaur</span></dt><dd>Brief appearance; egg‑raiding behavior nod.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Lystrosaurus <span class="chip">dinosaur</span></dt><dd>Stout, beaked synapsid seen in captivity and transport.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Mosasaurus <span class="chip">dinosaur</span></dt><dd>Now roaming oceans freely; impacts global fisheries.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Parasaurolophus, Gallimimus, Ankylosaurus, Apatosaurus, Nasutoceratops <span class="chip">dinosaur</span></dt><dd>Various sanctuary and world‑at‑large cameos showing ecosystem breadth.</dd></div>
+
+          <div class="row" data-movie="Dominion (2022)"><dt>Dr. Alan Grant <span class="chip">human</span></dt><dd>Returns as a leading paleontologist dealing with dinosaurs living in the wild.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Dr. Ellie Sattler <span class="chip">human</span></dt><dd>Returns as a key figure studying the ecological impact of dinosaurs on agriculture.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Dr. Ian Malcolm <span class="chip">human</span></dt><dd>Returns and plays a significant role in confronting corporate threats.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Owen Grady <span class="chip">human</span></dt><dd>Continuing his work with raptors and protecting dinosaurs and people.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Claire Dearing <span class="chip">human</span></dt><dd>Advocates for dinosaur welfare while navigating global crises.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Maisie Lockwood <span class="chip">human</span></dt><dd>Her background and existence remain central to ethical questions around cloning.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Dr. Henry Wu <span class="chip">human</span></dt><dd>Continuing genetic work with wide-reaching consequences.</dd></div>
+          <div class="row" data-movie="Dominion (2022)"><dt>Lewis Dodgson <span class="chip">human</span></dt><dd>Corporate figure connected to Biosyn and genetic interests (antagonistic influence).</dd></div>
+        </dl>
+      </details>
+
+      <!-- Jurassic World: Rebirth (2025) -->
+      <details>
+        <summary>
+          Jurassic World: Rebirth (2025)
+          <span class="movie-meta">— Dinosaurs & People</span>
+        </summary>
+        <dl>
+          <div class="row" data-movie="Jurassic World: Rebirth (2025)"><dt>Three colossal dinosaurs (DNA targets) <span class="chip">dinosaur</span></dt><dd>Central to the plot as sources of DNA for a life-saving drug; described as colossal and mutated.</dd></div>
+          <div class="row" data-movie="Jurassic World: Rebirth (2025)"><dt>Mutated & monstrous dinosaurs <span class="chip">dinosaur</span></dt><dd>Various dangerous and mutated creatures encountered on the island facility.</dd></div>
+
+          <div class="row" data-movie="Jurassic World: Rebirth (2025)"><dt>Covert extraction team <span class="chip">human</span></dt><dd>Un-named team sent to collect DNA (portrayed by Scarlett Johansson and Mahershala Ali).</dd></div>
+          <div class="row" data-movie="Jurassic World: Rebirth (2025)"><dt>Shipwrecked family <span class="chip">human</span></dt><dd>Family encountered and stranded with the extraction team; unnamed in provided description.</dd></div>
+        </dl>
+      </details>
+
+    </main>
+
+    <footer>
+      <p>Tip: Use the search box to filter by name or trait. Each movie is a collapsible section for easier navigation.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Filter across all rows and expand matching movie sections
+    const input = document.getElementById('filter');
+    const rows = Array.from(document.querySelectorAll('.row'));
+    const detailsEls = Array.from(document.querySelectorAll('details'));
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      let anyVisibleInDetail = new Map();
+      rows.forEach(r => {
+        const text = (r.innerText || '').toLowerCase();
+        const visible = q === '' || text.includes(q);
+        r.style.display = visible ? '' : 'none';
+        const movie = r.dataset.movie;
+        if (!anyVisibleInDetail.has(movie)) anyVisibleInDetail.set(movie, false);
+        if (visible) anyVisibleInDetail.set(movie, true);
+      });
+      // open details that have matches, collapse those that don't
+      detailsEls.forEach(d => {
+        const title = d.querySelector('[data-movie]') ? d.querySelector('[data-movie]').dataset.movie : '';
+        // simpler: check rows inside this details for visible
+        const visibleRow = d.querySelector('.row[style="display: block;"]') || d.querySelector('.row:not([style*="display: none"])');
+        if (q === '') return; // don't auto-collapse/expand when empty
+        if (visibleRow) d.open = true; else d.open = false;
+      });
+    });
+
+    // Make clicking the summary toggle but keep keyboard accessibility
+    document.querySelectorAll('summary').forEach(s => {
+      s.addEventListener('click', (e) => {
+        // native <details> handles opening/closing; no extra needed
+      });
+    });
+  </script>
+</body>
+</html>

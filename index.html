@@ -1,60 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurassic Theories</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #0b1e3f; /* Matches other pages */
+            color: white;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #08152d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+        }
+
+        .nav-bar {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-bar li {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #1b3d7a;
+        }
+
+        .jurassic {
+            font-size: 1.2rem;
+            color: #ffdd57;
+            letter-spacing: 1px;
+        }
+
+        /* Main Dino Content */
+        #daily-fact {
+            margin-top: 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: rgba(255, 221, 87, 0.1);
+            border: 1px solid #ffdd57;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        #dino-image {
+            display: block;
+            margin: 25px auto;
+            width: 400px;
+            max-width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+        }
+
+        #event-countdown {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffdd57;
+        }
+    </style>
 </head>
-<body style="background-color: white;">
-    <h1 style="color:black; font-size: 45px;">Welcome to my Website</h1>
-    <marquee style="color: blue;">jurrasic world fanbase</marquee>
-    <!-- <p style="font-size: 30px; color: blue;">This is a one piece fanbase website</p> -->
-    <!-- <a href="https://gamerant.com/one-piece-gear-5-luffy-explained/" target="_blank"> -->
-    <!-- <img src="./Luffy-Activates-Gear-5.webp" alt="luffy gear five" height="140"> -->
-    <!-- </a><br><hr> -->
-    <!-- <a href="https://gamerant.com/one-piece-important-characters-not-appeared-long-time/" target="_blank" -->
-        <!-- style="font-size: 31px;">gamerant.com</a> -->
-    <h2 style="color:black ">A Movie Releasing 2025 december 25th</h2>
-    <table border="2">
-        <thead>
-            <tr style="color:black">
-                <th>Name</th>
-                <Th>Job Title</Th>
-                <th>Email Address</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="color: black;">
-                <td>Vivan</td>
-                <td>Editor</td>
-                <td>venonreactss@gmail.com</td>
-            </tr>
-            <tr style="color: black;">
-                <td>Ansh</td>
-                <td>Action Manager</td>
-                <td>ansh.15@gmail.com</td>
-            </tr>
-            <tr style="color:black;">
-                <td>Vedant</td>
-                <td>Director</td>
-                <td>Pathak.Vedant.14@gmail.com</td>
-            </tr>
-        </tbody>
-    </table>
-    <dl>
-        <dt>Rexy</dt>
-        <dd>Nobody knows of Rexy in Jurassic World Rebirth for sure but rexy most likely passed away due to disease or age as of dominion she was 35 and rebirth takes place 5 years after dominion and as the lifespan of a trex is 30years it is very possible that rexy is dead</dd>
-        <dt> mosasaurus</dt>
-        <dd>while there was a photo of a mosasaurus skull in the background the creator steven spielberg has confirmeed that is not the mosasaurus from jurrasic world </dd>
-        <dt>D-rex </dt>
-      <dd>  Many fans beleive it is a hybrid made for hunting but the d-rex is actually a failed genetic experiment on creating a T-rex and the age is not confirmed but i is estimated t be 40 years old as Ingen began their experiments in 1985</dd>
-      <dt>Asset -87</dt>
-      <dd>Presumed to be the first ever hybrid but was deemed a failure due to it being highly agressive as of rebirth it is probaly still alive as it was confirmed it's lifespan was about 55 years old it is still on mantahcorp island after events of camp cretaceous season 4</dd>
-    </dl>
-    <a href="./form.html">registration form</a><br><br>
-<a href="./lotus.html" target="_blank">look at my growing lotus</a>
-<a href="./offer.html"> Packages</a>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-bar">
+            <li class="jurassic">JURASSIC THEORIES</li>
+            <li><a class="bg-yelow" href="./about.html">About</a></li>
+            <li> <a class="bg-yelow" href="./characters.html">Characters</a></li>
+            <li><a class="bg-yelow" href="./timelines.html">Timelines</a></li>
+            <li><a class="bg-yelow" href="./films.html">Films</a></li>
+        </ul>
+    </nav>
+
+    <!-- Daily Fact Section -->
+    <div id="daily-fact"></div>
+
+    <!-- Dinosaur Image -->
+    <img id="dino-image" src="./dinoimg.jpg" alt="Dinosaur of the Day">
+
+    <!-- Countdown -->
+    <div id="event-countdown"></div>
+
+    <!-- Script for Facts, Images, and Countdown -->
+    <script>
+        // 🦖 Daily Dinosaur Facts
+        const dinoFacts = [
+            "The Indominus Rex could run up to 30 mph in Jurassic World.",
+            "Velociraptors were smaller in real life but much smarter than shown in the movies.",
+            "The T-Rex roar was a mix of a lion, elephant, and alligator sound effects.",
+            "Blue, the Velociraptor, became one of the franchise's most iconic dinosaurs.",
+            "Mosasaurs ruled the oceans while T-Rex ruled the land!"
+        ];
+
+        // 🖼️ Dinosaur Images
+        const dinoImages = [
+            "i rex.jfif",
+            "blue.jfif",
+            "t rex.jfif",
+            "stego.jfif",
+            "reptile.jfif"
+        ];
+
+        // 📅 Upcoming Jurassic Event
+        const eventDate = new Date("2025-12-18T00:00:00"); // Jurassic teaser date
+
+        // Pick today's index
+        const today = new Date();
+        const index = today.getDate() % dinoFacts.length;
+
+        // Update fact & image
+        document.getElementById("daily-fact").innerText = "🦖 Fact of the Day: " + dinoFacts[index];
+        document.getElementById("dino-image").src = dinoImages[index];
+
+        // Update countdown
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("event-countdown").innerText = "🔥 The new Jurassic update is here!";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("event-countdown").innerText =
+                `📅 ${days} days until the next Jurassic event!`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000 * 60 * 60); // Refresh countdown every hour
+    </script>
 </body>
 
 </html>
