@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurassic Theories</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            background-color: #0b1e3f;
+            color: white;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #08152d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+        }
+
+        .nav-bar {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-bar li {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #1b3d7a;
+        }
+
+        .jurassic {
+            font-size: 1.2rem;
+            color: #ffdd57;
+            letter-spacing: 1px;
+        }
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            margin-top: 25px;
+            color: #ffdd57;
+            font-size: 2rem;
+        }
+
+        /* Theory Container */
+        .theories-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 10px;
+        }
+
+        /* Collapsible Theory Cards */
+        .theory {
+            background-color: rgba(255, 255, 255, 0.05);
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .theory:hover {
+            transform: scale(1.02);
+        }
+
+        .theory-header {
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background-color: rgba(255, 221, 87, 0.1);
+            color: #ffdd57;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theory-content {
+            display: none;
+            padding: 15px;
+            color: #dcdcdc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .theory.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .theory.active .theory-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-bar">
+            <li class="jurassic">JURASSIC THEORIES</li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./characters.html">Characters</a></li>
+            <li><a href="./timelines.html">Timelines</a></li>
+            <li><a href="./films.html">Films</a></li>
+            <li><a href="./theories.html">Theories</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Title -->
+    <h1>Fan Theories About the Jurassic Franchise</h1>
+
+    <!-- Theories Container -->
+    <div class="theories-container">
+        <!-- Theory 1 -->
+        <div class="theory">
+            <div class="theory-header">
+                <span>🧬 Theory 1: The Dinosaurs Aren’t Genetically Accurate</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="theory-content">
+                <p>Some fans believe the dinosaurs in the films aren’t scientifically accurate because InGen intentionally altered their DNA with modern animals, making them look scarier and more cinematic.</p>
+            </div>
+        </div>
+
+        <!-- Theory 2 -->
+        <div class="theory">
+            <div class="theory-header">
+                <span>🦖 Theory 2: Raptors Were Being Trained for Military Use</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="theory-content">
+                <p>Jurassic World hinted that raptors were being considered for weaponized military missions. Some fans think InGen planned this all along, long before Hoskins mentioned it.</p>
+            </div>
+        </div>
+
+        <!-- Theory 3 -->
+        <div class="theory">
+            <div class="theory-header">
+                <span>🌎 Theory 3: Jurassic World Leads to Human Extinction</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="theory-content">
+                <p>After Fallen Kingdom and Dominion, dinosaurs now roam free. Many fans speculate that unchecked dinosaur reproduction could eventually push humans to extinction or force them underground.</p>
+            </div>
+        </div>
+
+        <!-- Theory 4 -->
+        <div class="theory">
+            <div class="theory-header">
+                <span>🔬 Theory 4: InGen Has Cloned Humans</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="theory-content">
+                <p>Maisie Lockwood’s backstory introduced human cloning into the franchise. Some fans believe InGen secretly cloned humans much earlier, possibly explaining certain mysterious disappearances.</p>
+            </div>
+        </div>
+
+        <!-- Theory 5 -->
+        <div class="theory">
+            <div class="theory-header">
+                <span>🧩 Theory 5: Isla Sorna Still Holds Secrets</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="theory-content">
+                <p>After Jurassic Park III, Isla Sorna was abandoned, but fans believe more experimental hybrids were left behind — possibly setting up future films or spin-offs.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Expand/Collapse Theories
+        const theories = document.querySelectorAll('.theory');
+        theories.forEach(theory => {
+            theory.querySelector('.theory-header').addEventListener('click', () => {
+                theory.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
