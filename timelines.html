@@ -2,235 +2,255 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurassic Timeline</title>
-    <link rel="stylesheet" href="./style.css">
-    <style>
-        body {
-            background-color: #0b1e3f;
-            color: white;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jurassic Timeline</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      background-color: #0b1e3f; /* exact About background */
+      color: #ffffff;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #08152d;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            padding: 10px 0;
-        }
+    /* Navigation Bar */
+    nav {
+      background-color: #0b3d91; /* exact About navbar blue */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      padding: 10px 0;
+    }
 
-        .nav-bar {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            align-items: center;
-        }
+    .nav-bar {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      align-items: center;
+    }
 
-        .nav-bar li {
-            font-size: 1rem;
-            font-weight: bold;
-        }
+    .nav-bar li {
+      font-size: 1rem;
+      font-weight: bold;
+    }
 
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
+    .nav-bar a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
 
-        .nav-bar a:hover {
-            background-color: #1b3d7a;
-        }
+    .nav-bar a:hover {
+      background-color: #1454c2; /* same hover used on About */
+    }
 
-        .jurassic {
-            font-size: 1.2rem;
-            color: #ffdd57;
-            letter-spacing: 1px;
-        }
+    .jurassic {
+      font-size: 1.2rem;
+      color: #ffcc00; /* exact About gold */
+      letter-spacing: 1px;
+    }
 
-        /* Timeline Container */
-        .timeline {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            position: relative;
-        }
+    /* Page Title Banner */
+    .banner {
+      background-color: #0b3d91; /* match About navbar blue so banner feels identical */
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
 
-        /* Timeline Vertical Line */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #ffdd57;
-            transform: translateX(-50%);
-        }
+    .banner h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #ffcc00; /* exact About gold */
+    }
 
-        /* Timeline Items */
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    /* Timeline Container */
+    .timeline {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      position: relative;
+    }
 
-        .timeline-item.left {
-            left: 0;
-            text-align: right;
-        }
+    /* Timeline Vertical Line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #ffcc00; /* gold line */
+      transform: translateX(-50%);
+    }
 
-        .timeline-item.right {
-            left: 50%;
-            text-align: left;
-        }
+    /* Timeline Items */
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        /* Dots on Timeline */
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 16px;
-            height: 16px;
-            background-color: #ffdd57;
-            border-radius: 50%;
-            border: 3px solid #08152d;
-            z-index: 1;
-        }
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
 
-        .timeline-item.left::before {
-            right: -10px;
-        }
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
 
-        .timeline-item.right::before {
-            left: -10px;
-        }
+    /* Dots on Timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background-color: #ffcc00; /* gold dot */
+      border-radius: 50%;
+      border: 3px solid #0b3d91; /* blue ring matches navbar */
+      z-index: 1;
+    }
 
-        /* Timeline Content Box */
-        .content {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
+    .timeline-item.left::before {
+      right: -10px;
+    }
 
-        .content h3 {
-            margin: 0;
-            color: #ffdd57;
-            font-size: 1.2rem;
-        }
+    .timeline-item.right::before {
+      left: -10px;
+    }
 
-        .content p {
-            margin-top: 5px;
-            color: #dcdcdc;
-            font-size: 0.95rem;
-        }
+    /* Timeline Content Box */
+    .content {
+      background-color: #1e1e1e; /* exact About container dark */
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
+    .content h3 {
+      margin: 0;
+      color: #ffcc00; /* gold headings */
+      font-size: 1.2rem;
+    }
 
-            .timeline-item {
-                width: 100%;
-                padding-left: 40px;
-                text-align: left !important;
-            }
+    .content p {
+      margin-top: 5px;
+      color: #dcdcdc;
+      font-size: 0.95rem;
+    }
 
-            .timeline-item::before {
-                left: 10px;
-            }
-        }
-    </style>
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        text-align: left !important;
+      }
+
+      .timeline-item::before {
+        left: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul class="nav-bar">
-            <li class="jurassic">JURASSIC THEORIES</li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./characters.html">Characters</a></li>
-            <li><a href="./timelines.html">Timelines</a></li>
-            <li><a href="./films.html">Films</a></li>
-        </ul>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <ul class="nav-bar">
+      <li class="jurassic">JURASSIC THEORIES</li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./characters.html">Characters</a></li>
+      <li><a href="./timelines.html">Timelines</a></li>
+      <li><a href="./films.html">Films</a></li>
+      <li><a href="./theories.html"> Theories</a></li>
+    </ul>
+  </nav>
 
-    <!-- Timeline -->
-    <div class="timeline">
-        <!-- Prehistoric Era -->
-        <div class="timeline-item left">
-            <div class="content">
-                <h3>~65 Million Years Ago</h3>
-                <p>The extinction of the dinosaurs occurs after a catastrophic meteor impact.</p>
-            </div>
-        </div>
+  <!-- Banner Title -->
+  <div class="banner">
+    <h1>Jurassic Timeline</h1>
+  </div>
 
-        <!-- 1980s: InGen Founded -->
-        <div class="timeline-item right">
-            <div class="content">
-                <h3>1983</h3>
-                <p>John Hammond founds InGen, beginning research into cloning dinosaurs using ancient DNA.</p>
-            </div>
-        </div>
-
-        <!-- Jurassic Park Creation -->
-        <div class="timeline-item left">
-            <div class="content">
-                <h3>1993 – Jurassic Park</h3>
-                <p>The original Jurassic Park opens for testing on Isla Nublar but fails after a containment breach.</p>
-            </div>
-        </div>
-
-        <!-- The Lost World -->
-        <div class="timeline-item right">
-            <div class="content">
-                <h3>1997 – The Lost World</h3>
-                <p>InGen tries to bring dinosaurs to the mainland, but chaos ensues in San Diego.</p>
-            </div>
-        </div>
-
-        <!-- Jurassic Park III -->
-        <div class="timeline-item left">
-            <div class="content">
-                <h3>2001 – Jurassic Park III</h3>
-                <p>Grant is tricked into returning to Isla Sorna to help rescue a missing boy.</p>
-            </div>
-        </div>
-
-        <!-- Jurassic World -->
-        <div class="timeline-item right">
-            <div class="content">
-                <h3>2015 – Jurassic World</h3>
-                <p>The fully functional Jurassic World theme park opens on Isla Nublar but collapses after the Indominus Rex escape.</p>
-            </div>
-        </div>
-
-        <!-- Fallen Kingdom -->
-        <div class="timeline-item left">
-            <div class="content">
-                <h3>2018 – Fallen Kingdom</h3>
-                <p>The dinosaurs are evacuated from Isla Nublar before its destruction, leading to their release into the wild.</p>
-            </div>
-        </div>
-
-        <!-- Dominion -->
-        <div class="timeline-item right">
-            <div class="content">
-                <h3>2022 – Jurassic World Dominion</h3>
-                <p>Dinosaurs now coexist with humans, forcing society to adapt to a new ecological balance.</p>
-            </div>
-        </div>
+  <!-- Timeline -->
+  <div class="timeline">
+    <!-- Prehistoric Era -->
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>~65 Million Years Ago</h3>
+        <p>The extinction of the dinosaurs occurs after a catastrophic meteor impact.</p>
+      </div>
     </div>
+
+    <!-- 1980s: InGen Founded -->
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>1983</h3>
+        <p>John Hammond founds InGen, beginning research into cloning dinosaurs using ancient DNA.</p>
+      </div>
+    </div>
+
+    <!-- Jurassic Park Creation -->
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>1993 – Jurassic Park</h3>
+        <p>The original Jurassic Park opens for testing on Isla Nublar but fails after a containment breach.</p>
+      </div>
+    </div>
+
+    <!-- The Lost World -->
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>1997 – The Lost World</h3>
+        <p>InGen tries to bring dinosaurs to the mainland, but chaos ensues in San Diego.</p>
+      </div>
+    </div>
+
+    <!-- Jurassic Park III -->
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>2001 – Jurassic Park III</h3>
+        <p>Grant is tricked into returning to Isla Sorna to help rescue a missing boy.</p>
+      </div>
+    </div>
+
+    <!-- Jurassic World -->
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>2015 – Jurassic World</h3>
+        <p>The fully functional Jurassic World theme park opens on Isla Nublar but collapses after the Indominus Rex escape.</p>
+      </div>
+    </div>
+
+    <!-- Fallen Kingdom -->
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>2018 – Fallen Kingdom</h3>
+        <p>The dinosaurs are evacuated from Isla Nublar before its destruction, leading to their release into the wild.</p>
+      </div>
+    </div>
+
+    <!-- Dominion -->
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>2022 – Jurassic World Dominion</h3>
+        <p>Dinosaurs now coexist with humans, forcing society to adapt to a new ecological balance.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

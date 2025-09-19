@@ -9,14 +9,14 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #121212;
+            background-color: #0b1e3f; /* same as About */
             color: white;
             line-height: 1.6;
         }
 
         /* Navbar */
         nav {
-            background-color: #0b3d91;
+            background-color: #0b3d91; /* same as About */
             padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             position: sticky;
@@ -35,6 +35,7 @@
 
         .nav-bar li {
             font-size: 16px;
+            font-weight: bold;
         }
 
         .nav-bar a {
@@ -50,45 +51,123 @@
         }
 
         .jurassic {
-            font-weight: bold;
-            font-size: 20px;
-            color: #ffcc00;
+            font-size: 1.2rem;
+            color: #ffcc00; /* exact gold */
+            letter-spacing: 1px;
             margin-right: 40px;
         }
 
-        /* Page Container */
+        /* Banner */
+        .banner {
+            width: 100%;
+            height: 350px;
+            background: url("./theories-banner.jpg") center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffcc00; /* exact gold */
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        /* Daily Fact & Image */
         .container {
             max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
-            background-color: #1e1e1e;
+            background-color: #1e1e1e; /* same as About */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        /* Headings */
-        h1, h2, h3 {
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-
-        /* Collapsible Sections */
-        details {
-            background-color: #222;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        details summary {
+        #daily-fact {
+            font-size: 20px;
             font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
             color: #ffcc00;
-            outline: none;
         }
 
-        details[open] summary {
-            color: #fff;
+        #dino-image {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        #event-countdown {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffcc00;
+        }
+
+        /* Theories Section */
+        .theories-preview {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .theories-preview h2 {
+            text-align: center;
+            color: #ffcc00;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .theory-card {
+            background-color: #1e1e1e;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .theory-card:hover {
+            transform: scale(1.02);
+        }
+
+        .theory-card h3 {
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin: 0 0 8px;
+        }
+
+        .theory-card p {
+            color: #dcdcdc;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .read-more a {
+            background-color: #ffcc00;
+            color: #0b1e3f;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .read-more a:hover {
+            background-color: #e6c94d;
         }
 
         /* Footer */
@@ -124,171 +203,17 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>Welcome to Jurassic Theories</h1>
-        <p>This is your base template. Replace this text with content for each page.</p>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Jurassic Fanbase • Made with 🦖 | 
-        <a href="./about.html">Learn More</a>
-    </footer>
-</body>
-</html>
-
-    <style>
-        body {
-            background-color: #0b1e3f;
-            color: white;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* Navbar */
-        nav {
-            background-color: #08152d;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            padding: 10px 0;
-        }
-
-        .nav-bar {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-bar li {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-
-        .nav-bar a:hover {
-            background-color: #1b3d7a;
-        }
-
-        .jurassic {
-            font-size: 1.2rem;
-            color: #ffdd57;
-            letter-spacing: 1px;
-        }
-
-        /* Dino Fact & Image */
-        #daily-fact {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        #dino-image {
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        #event-countdown {
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        /* Theories Section */
-        .theories-preview {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .theories-preview h2 {
-            text-align: center;
-            color: #ffdd57;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .theory-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            margin: 15px 0;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-            transition: transform 0.2s ease;
-        }
-
-        .theory-card:hover {
-            transform: scale(1.02);
-        }
-
-        .theory-card h3 {
-            color: #ffdd57;
-            font-size: 1.2rem;
-            margin: 0 0 8px;
-        }
-
-        .theory-card p {
-            color: #dcdcdc;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-
-        .read-more {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .read-more a {
-            background-color: #ffdd57;
-            color: #0b1e3f;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .read-more a:hover {
-            background-color: #e6c94d;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul class="nav-bar">
-            <li class="jurassic">JURASSIC THEORIES</li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./characters.html">Characters</a></li>
-            <li><a href="./timelines.html">Timelines</a></li>
-            <li><a href="./films.html">Films</a></li>
-            <li><a href="./theories.html">Theories</a></li>
-        </ul>
-    </nav>
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-text">Welcome to Jurassic Theories</div>
+    </section>
 
     <!-- Daily Fact Section -->
-    <div id="daily-fact"></div>
-    <img id="dino-image" src="./dinoimg.jpg" width="400" />
-    <div id="event-countdown"></div>
+    <div class="container">
+        <div id="daily-fact"></div>
+        <img id="dino-image" src="./dinoimg.jpg" alt="Daily Dinosaur" />
+        <div id="event-countdown"></div>
+    </div>
 
     <!-- Theories Preview Section -->
     <div class="theories-preview">
@@ -314,13 +239,18 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Jurassic Fanbase • Made with 🦖 |
+        <a href="./about.html">Learn More</a>
+    </footer>
+
     <script>
         // 🦖 Daily Dinosaur Facts
         const dinoFacts = [
             "The Indominus Rex could run up to 30 mph in Jurassic World.",
             "Velociraptors were smaller in real life but much smarter than shown in the movies.",
             "The T-Rex roar was a mix of a lion, elephant, and alligator sound effects.",
-            "Blue, the Velociraptor, became one of the franchise's most iconic dinosaurs.",
             "Mosasaurs ruled the oceans while T-Rex ruled the land!"
         ];
 
@@ -329,12 +259,11 @@
             "i rex.jfif",
             "blue.jfif",
             "t rex.jfif",
-            "stego.jfif",
             "reptile.jfif"
         ];
 
         // 📅 Upcoming Jurassic Event
-        const eventDate = new Date("2025-12-18T00:00:00"); // Jurassic teaser date
+        const eventDate = new Date("2025-12-18T00:00:00");
 
         // Pick today's index
         const today = new Date();
@@ -360,8 +289,7 @@
         }
 
         updateCountdown();
-        setInterval(updateCountdown, 1000 * 60 * 60); // Refresh countdown every hour
+        setInterval(updateCountdown, 1000 * 60 * 60);
     </script>
 </body>
-
 </html>
