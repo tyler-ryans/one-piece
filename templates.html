@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body { background:#edf0f5; font-family:Segoe UI,sans-serif; }
+
+.resume { display:none; padding:30px; border-radius:15px; }
+.photo { width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid white; }
+
+.section { margin-top:20px; }
+.section h6 { font-size:13px; text-transform:uppercase; opacity:.7; }
+
+/* TEMPLATE 1 – SIDEBAR */
+.t1 { background:#fff; }
+.t1 .side { background:#0d6efd; color:white; padding:25px; border-radius:12px; }
+
+/* TEMPLATE 2 – DARK CARD */
+.t2 { background:#020617; color:white; }
+.t2 h2 { color:#38bdf8; }
+
+/* TEMPLATE 3 – CENTERED MINIMAL */
+.t3 { background:#fff; text-align:center; }
+.t3 .section { text-align:left; }
+
+/* TEMPLATE 4 – SKILL BARS */
+.t4 { background:#f0fdf4; }
+.bar { height:8px; background:#bbf7d0; border-radius:5px; overflow:hidden; }
+.fill { height:100%; background:#22c55e; }
+
+/* TEMPLATE 5 – CREATIVE TIMELINE */
+.t5 { background:linear-gradient(135deg,#667eea,#764ba2); color:white; }
+.timeline { border-left:3px solid rgba(255,255,255,.5); padding-left:15px; }
+</style>
+</head>
+<body>
+
+<div class="container my-4">
+
+<!-- INPUT -->
+<div class="card p-4 shadow-sm mb-3">
+  <h4>Resume Builder</h4>
+  <input id="name" class="form-control mb-2" value="Aryan Sharma">
+  <input id="title" class="form-control mb-2" value="Front-End Developer">
+  <textarea id="summary" class="form-control mb-2">
+Passionate developer focused on clean UI, accessibility, and responsive web design.
+  </textarea>
+  <textarea id="skills" class="form-control mb-2">
+HTML, CSS, Bootstrap, JavaScript, Git
+  </textarea>
+  <textarea id="education" class="form-control mb-2">
+BCA – XYZ University (2022–2025)
+  </textarea>
+  <textarea id="experience" class="form-control mb-2">
+Web Developer Intern – TechNova  
+Built responsive layouts and UI components.
+  </textarea>
+
+  <label class="form-label mt-2">Upload Photo</label>
+  <input type="file" class="form-control" accept="image/*" onchange="loadPhoto(event)">
+</div>
+
+<!-- BUTTONS -->
+<div class="mb-3">
+  <button class="btn btn-primary btn-sm" onclick="show(1)">Template 1</button>
+  <button class="btn btn-dark btn-sm" onclick="show(2)">Template 2</button>
+  <button class="btn btn-secondary btn-sm" onclick="show(3)">Template 3</button>
+  <button class="btn btn-success btn-sm" onclick="show(4)">Template 4</button>
+  <button class="btn btn-warning btn-sm" onclick="show(5)">Template 5</button>
+  <button class="btn btn-outline-danger btn-sm float-end" onclick="downloadPDF()">Download PDF</button>
+</div>
+
+<!-- OUTPUT -->
+<div id="output">
+  <div class="resume t1" id="r1"></div>
+  <div class="resume t2" id="r2"></div>
+  <div class="resume t3" id="r3"></div>
+  <div class="resume t4" id="r4"></div>
+  <div class="resume t5" id="r5"></div>
+</div>
+
+</div>
+
+<script>
+let activeResume=null;
+let photoSrc="https://via.placeholder.com/150";
+
+function loadPhoto(e){
+  photoSrc = URL.createObjectURL(e.target.files[0]);
+}
+
+function base(){
+  return {
+    n:name.value,t:title.value,s:summary.value,
+    sk:skills.value,e:education.value,x:experience.value
+  };
+}
+
+function show(n){
+  document.querySelectorAll('.resume').forEach(r=>r.style.display="none");
+  let d=base(), html="";
+
+  if(n===1)
+  html=`<div class="row">
+    <div class="col-md-4 side text-center">
+      <img src="${photoSrc}" class="photo mb-3">
+      <h3>${d.n}</h3><p>${d.t}</p>
+      <p>${d.sk}</p>
+    </div>
+    <div class="col-md-8">
+      <div class="section"><h6>Profile</h6>${d.s}</div>
+      <div class="section"><h6>Education</h6>${d.e}</div>
+      <div class="section"><h6>Experience</h6>${d.x}</div>
+    </div></div>`;
+
+  if(n===2)
+  html=`<img src="${photoSrc}" class="photo mb-3">
+  <h2>${d.n}</h2><p>${d.t}</p>
+  <div class="section"><h6>Summary</h6>${d.s}</div>
+  <div class="section"><h6>Skills</h6>${d.sk}</div>`;
+
+  if(n===3)
+  html=`<img src="${photoSrc}" class="photo mb-3">
+  <h2>${d.n}</h2><p>${d.t}</p>
+  <div class="section"><h6>About</h6>${d.s}</div>
+  <div class="section"><h6>Education</h6>${d.e}</div>`;
+
+  if(n===4)
+  html=`<h2>${d.n}</h2><p>${d.t}</p>
+  <div class="section"><h6>Skills</h6>
+  ${d.sk.split(",").map(s=>`
+  <small>${s}</small>
+  <div class="bar mb-2"><div class="fill" style="width:80%"></div></div>`).join("")}
+  </div>`;
+
+  if(n===5)
+  html=`<img src="${photoSrc}" class="photo mb-3">
+  <h2>${d.n}</h2><p>${d.t}</p>
+  <div class="timeline">
+    <p><strong>Profile</strong><br>${d.s}</p>
+    <p><strong>Education</strong><br>${d.e}</p>
+    <p><strong>Experience</strong><br>${d.x}</p>
+  </div>`;
+
+  let box=document.getElementById("r"+n);
+  box.innerHTML=html;
+  box.style.display="block";
+  activeResume=box;
+}
+
+function downloadPDF(){
+  if(!activeResume){ alert("Select a template first"); return; }
+  window.print();
+}
+</script>
+
+</body>
+</html>
